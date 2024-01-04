@@ -1,0 +1,25 @@
+﻿@inherits BaseComponent;
+
+<label for="@this.Id">@Label</label>
+<input @bind-value="@this.Value"
+       id="@this.Id"
+       class="@this.Class"
+       style="@this.Style"
+       @oninput="@(e => this.OnValueChanged(e.Value?.ToString()))"
+       @attributes="UserAttributes"/>
+
+@code {    
+    [Parameter]
+    public string Label { get; set; } = string.Empty;
+
+    [Parameter]
+    public string? Value { get; set; }
+
+    [Parameter]
+    public EventCallback<string?> ValueChanged { get; set; }
+
+    private async Task OnValueChanged(string? value)
+    {
+        await ValueChanged.InvokeAsync(value).ConfigureAwait(false);
+    }
+}

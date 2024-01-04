@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Labs.WebComponents</title>
+    <base href="/" />
+    
+    <!-- If you add any scoped CSS files, uncomment the following to load them
+    <link href="Labs.WebComponents.styles.css" rel="stylesheet" /> -->
+</head>
+
+<body>
+
+    <h1>Demo Components</h1>
+
+    <demo-input-text label="Demo Field 1" id="field1" class="field-1" style="color: blue;"></demo-input-text>
+
+    <script src="_framework/blazor.webassembly.js" autostart="false"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            Blazor.start({
+                loadBootResource: function (type, name, defaultUri, integrity) {
+                    console.log(`Loading: '${type}', '${name}', '${defaultUri}', '${integrity}'`);
+                    return defaultUri;
+                    //switch (true) {
+                    //    case (type === 'manifest' && name === 'blazor.boot.json'):
+                    //    case (type === 'assembly' && /(Bliksund)\.(.*)/.test(name)):
+                    //        return fetch(defaultUri, {
+                    //            cache: 'no-cache',
+                    //            integrity: integrity,
+                    //            headers: { 'Custom-Header': 'Custom Value' }
+                    //        });
+                    //    default:
+                    //        return `http://localhost:8080/blazor/dotnet/${name}`;
+                    //}
+                },
+            }).then(function () {
+                // Do something....
+            });
+        });
+    </script>
+</body>
+
+</html>

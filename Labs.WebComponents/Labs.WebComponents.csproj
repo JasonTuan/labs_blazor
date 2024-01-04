@@ -4,6 +4,11 @@
     <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+	<BlazorWebAssemblyPreserveCollationData>false</BlazorWebAssemblyPreserveCollationData>
+	<PublishTrimmed>true</PublishTrimmed>
+	<BlazorEnableCompression>true</BlazorEnableCompression>
+	<InvariantGlobalization>true</InvariantGlobalization>
+	<TrimMode>link</TrimMode>
   </PropertyGroup>
 
   <ItemGroup>
